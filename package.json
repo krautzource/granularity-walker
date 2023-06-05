@@ -1,0 +1,19 @@
+{
+  "name": "complex-image-walker",
+  "version": "1.0.0",
+  "description": "A simple walker for nested image content",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"please add tests\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krautzource/complex-image-walker.git"
+  },
+  "author": "Peter Krautzberger (krautzource UG)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/krautzource/complex-image-walker/issues"
+  },
+  "homepage": "https://github.com/krautzource/complex-image-walker#readme"
+}
