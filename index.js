@@ -22,9 +22,9 @@ function handleClick(event) {
   if (!newActiveNode) activeAncestor.setAttribute("data-reverse", "true");
 }
 
-document.addEventListener("keydown", move);
+document.addEventListener("keydown", keyPadMove);
 
-function move(event) {
+function keyPadMove(event) {
   if (![37, 38, 39, 40].includes(event.keyCode)) return;
   if (
     event.target !== document.activeElement ||
