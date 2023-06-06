@@ -1,5 +1,4 @@
 function addRect(node) {
-    console.log("addRect:", node);
     if (node.tagName !== "g") return;
     const bbox = node.getBBox();
     node.insertAdjacentHTML(
@@ -9,7 +8,6 @@ function addRect(node) {
 }
 
 function clearRect(node) {
-    console.log("clearRect:", node);
     if (node.tagName !== "g") return;
     node.querySelectorAll("rect[data-rect]").forEach((node) => node.remove());
 }

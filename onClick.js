@@ -2,7 +2,6 @@ import { moveUp, moveDown } from './moves.js'
 
 
 export function handleClick(event) {
-    console.log(event.target);
     if (!event.target.closest("[data-level]")) return;
     const activeAncestor = event.target.closest('[tabindex="0"]');
     if (!activeAncestor) return;
