@@ -3,18 +3,18 @@ function addRect(node) {
     if (node.tagName !== "g") return;
     const bbox = node.getBBox();
     node.insertAdjacentHTML(
-      "afterbegin",
-      `<rect x="${bbox.x}" y="${bbox.y}" width="${bbox.width}" height="${bbox.height}" data-rect="true" fill="transparent" stroke="blue"/>`
+        "afterbegin",
+        `<rect x="${bbox.x}" y="${bbox.y}" width="${bbox.width}" height="${bbox.height}" data-rect="true" fill="transparent" stroke="blue"/>`
     );
-  }
-  
-  function clearRect(node) {
+}
+
+function clearRect(node) {
     console.log("clearRect:", node);
     if (node.tagName !== "g") return;
     node.querySelectorAll("rect[data-rect]").forEach((node) => node.remove());
-  }
-  
-  
+}
+
+
 export function moveDown(activeNode) {
     const activeNodeLevel = parseInt(activeNode.getAttribute("data-level"));
     const newLevel = activeNodeLevel + 1;
