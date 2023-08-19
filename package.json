@@ -1,5 +1,5 @@
 {
-  "name": "complex-image-walker",
+  "name": "granularity-walker",
   "version": "1.0.0",
   "description": "A simple walker for nested image content",
   "main": "index.js",
@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/krautzource/complex-image-walker.git"
+    "url": "git+https://github.com/krautzource/granularity-walker.git"
   },
   "author": "Peter Krautzberger (krautzource UG)",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/krautzource/complex-image-walker/issues"
+    "url": "https://github.com/krautzource/granularity-walker/issues"
   },
-  "homepage": "https://github.com/krautzource/complex-image-walker#readme"
+  "homepage": "https://github.com/krautzource/granularity-walker#readme",
 }

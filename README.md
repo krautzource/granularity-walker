@@ -1,3 +1,3 @@
-# complex image walker
+# granulariy walker
 
-A simple walker for nested image content
+A simple walker for nested content
