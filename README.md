@@ -1,4 +1,4 @@
-# granulariy walker
+# granularity walker
 
 A simple walker for nested content
 
