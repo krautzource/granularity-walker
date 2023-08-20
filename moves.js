@@ -3,7 +3,7 @@ function addRect(node) {
     const bbox = node.getBBox();
     node.insertAdjacentHTML(
         "afterbegin",
-        `<rect x="${bbox.x}" y="${bbox.y}" width="${bbox.width}" height="${bbox.height}" data-rect="true" fill="transparent" stroke="blue"/>`
+        `<rect x="${bbox.x}" y="${bbox.y}" width="${bbox.width}" height="${bbox.height}" data-rect="true" fill="transparent" stroke="none"/>`
     );
 }
 
