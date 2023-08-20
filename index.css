@@ -2,7 +2,6 @@
   color: pink;
 }
 
-svg:focus-within,
 mjx-container:focus-within > svg {
   background-color: black;
 }
