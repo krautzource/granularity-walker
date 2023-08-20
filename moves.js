@@ -12,28 +12,29 @@ function clearRect(node) {
     node.querySelectorAll("rect[data-rect]").forEach((node) => node.remove());
 }
 
+function disableElement(needsAriaHidden, node) {
+    node.removeAttribute("tabindex");
+    node.removeAttribute("aria-label");
+    node.setAttribute("role", "none");
+    clearRect(node);
+    if (needsAriaHidden) node.setAttribute('aria-hidden', 'true');
+}
+
+function enableElement(node) {
+    node.setAttribute("tabindex", "0");
+    node.removeAttribute("aria-hidden");
+    node.setAttribute("aria-label", node.getAttribute("data-label"));
+    node.setAttribute("role", "img");
+    addRect(node);
+}
 
 export function moveDown(activeNode) {
     const activeNodeLevel = parseInt(activeNode.getAttribute("data-level"));
     const newLevel = activeNodeLevel + 1;
     const newActiveNode = activeNode.querySelector(`[data-level="${newLevel}"]`);
     if (!newActiveNode) return;
-    activeNode.removeAttribute("tabindex");
-    activeNode.removeAttribute("aria-label");
-    activeNode.setAttribute("role", "none");
-    clearRect(activeNode);
-    activeNode
-        .querySelectorAll(`[data-level="${newLevel}"]`)
-        .forEach((currentLevelChild) => {
-            currentLevelChild.setAttribute("tabindex", "0");
-            currentLevelChild.removeAttribute("aria-hidden");
-            currentLevelChild.setAttribute(
-                "aria-label",
-                currentLevelChild.getAttribute("data-label")
-            );
-            currentLevelChild.setAttribute("role", "img");
-            addRect(currentLevelChild);
-        });
+    disableElement(false, activeNode);
+    activeNode.querySelectorAll(`[data-level="${newLevel}"]`).forEach(enableElement);
     newActiveNode.focus();
     return newActiveNode;
 }
@@ -43,17 +44,8 @@ export function moveUp(activeNode) {
     if (activeNodeLevel < 1) return;
     const newLevel = Math.max(activeNodeLevel - 1, 0);
     const ancestor = activeNode.closest(`[data-level="${newLevel}"]`);
-    ancestor.setAttribute("tabindex", "0");
-    ancestor.setAttribute("aria-label", ancestor.getAttribute("data-label"));
-    ancestor.setAttribute("role", "img");
-    addRect(ancestor);
-    ancestor.querySelectorAll('[tabindex="0"]').forEach((descendant) => {
-        descendant.removeAttribute("tabindex");
-        descendant.setAttribute("aria-hidden", "true");
-        descendant.removeAttribute("aria-label");
-        descendant.setAttribute("role", "none");
-        clearRect(descendant);
-    });
+    enableElement(ancestor);
+    ancestor.querySelectorAll('[tabindex="0"]').forEach(disableElement.bind(null, true));
     ancestor.focus();
     return ancestor;
 }
