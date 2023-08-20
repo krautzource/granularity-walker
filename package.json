@@ -4,7 +4,7 @@
   "description": "A simple walker for nested image content",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"please add tests\""
+    "test": "sirv . --dev & npx playwright test"
   },
   "repository": {
     "type": "git",
@@ -16,4 +16,7 @@
     "url": "https://github.com/krautzource/granularity-walker/issues"
   },
   "homepage": "https://github.com/krautzource/granularity-walker#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.35.0"
+  }
 }

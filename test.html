@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tests</title>
+  </head>
+  <body>
+    <span
+      role="img"
+      data-testid="test"
+      aria-label="12345678"
+      data-label="12345678"
+      data-level="0"
+      tabindex="0"
+    >
+      <span data-testid="test12" data-label="12" data-level="1">
+        <span data-testid="test1" data-label="1" data-level="2">1</span>
+        <span data-testid="test2" data-label="2" data-level="2">2</span>
+      </span>
+      <span data-testid="test3456" data-label="3456" data-level="1">
+        <span data-testid="test3" data-label="3" data-level="2">3</span>
+        <span data-testid="test4" data-label="4" data-level="2">4</span>
+        <span data-testid="test56" data-label="56" data-level="2">
+          <span data-testid="test5" data-label="5" data-level="3">5</span>
+          <span data-testid="test6" data-label="6" data-level="3">6</span>
+        </span>
+      </span>
+      <span data-testid="test78" data-label="78" data-level="1">
+        <span data-testid="test7" data-label="7" data-level="2">7</span>
+        <span data-testid="test8" data-label="8" data-level="2">8</span>
+      </span>
+    </span>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
